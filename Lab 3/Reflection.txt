@@ -1,0 +1,22 @@
+Clinton Caldwell
+Lab 3
+Reflection
+
+	Learning Python and Ruby in such a short time was overall not as hard as I would imagine. 
+There definitely was difficulty, but overall it was a lot easier than learning C++, the first 
+language I learned. I assume it was easier this time because I understood the logic of the
+ code better, and switching the language was more of dealing with little differences in ways
+ of expressing the same thing. The most challenging part of the Lab for me was the 
+Pseudo-code as I wanted to make sure I understood it concretely enough to translate it into
+ new different languages. It had been a while since I last programmed these sorting 
+algorithms, so it felt like a refresher, but also a deeper dive into the logic behind each sort. 
+The next hardest part was the Python code. Since it was the first one I decided to tackle, 
+there was a lot more time spent on it. Ruby on the other hand was very fast, since I found 
+there to be many similarities between it and Python. Thinking in another language was 
+interesting and appealing. At one point I thoughts were in Python, and in another my 
+thoughts were in Ruby. Switching how I would tackle a problem depending on the language
+ was challenging at first, but became easier as time spent on the lab increased. 
+
+
+
+
