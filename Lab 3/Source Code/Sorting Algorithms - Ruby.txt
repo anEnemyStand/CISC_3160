@@ -1,0 +1,199 @@
+#Clinton Caldwell   Lab 3
+#Ruby Sorting Algorithms
+
+def printPreSortList(sortType, a)
+    puts "Pre- #{sortType} Sort:\n#{a}"
+end
+
+def printPostSortList(sortType, a)
+    puts "Post- #{sortType} Sort:\n#{a}"
+    puts "----------"
+end
+
+
+
+#Insertion Sort ----------------------------------
+def insertionSort(a)
+    printPreSortList("Insertion", a)
+    
+    for i in 1..a.length()-1
+        temp = a[i]
+        j = i
+        while j>0 and a[j-1] >= temp
+            a[j] = a[j-1]
+            j-=1
+        a[j] = temp
+        end
+    end
+    printPostSortList("Insertion", a)
+end
+
+
+#Bubble Sort ----------------------------------
+def bubbleSort(a)
+    printPreSortList("Bubble", a)
+
+    for j in (a.length()-1).downto(1)
+        for i in 0..j-1
+            if a[i] > a[i+1]
+                temp = a[i]
+                a[i] = a[i+1]
+                a[i+1] = temp
+            end
+        end
+    end
+    printPostSortList("Bubble", a)
+end
+
+
+#Selection Sort ----------------------------------
+def selectionSort(a)
+    printPreSortList("Selection", a)
+    
+    for i in 0..a.length()-1
+        min = i
+        for j in (i+1)..a.length()-1
+            if a[j] < a[min]
+                min = j
+            end
+        end
+        temp = a[min]
+        a[min] = a[i]
+        a[i] = temp
+        
+    end
+    printPostSortList("Selection", a)
+
+end
+
+#Merge Sort ----------------------------------
+def mergeSort2(a)
+    if a.length() >1
+        m = a.length().div(2)
+        l = a.slice(0,m)
+        r = a.slice(m, a.length()-1)
+        
+        mergeSort2(l)
+        mergeSort2(r)
+
+        #Merge L and R into original   
+        i = 0
+        j = 0
+        k = 0
+        while i < l.length() and j <r.length()
+            if l[i] <= r[j]
+                a[k] = l[i]
+                i+=1
+            else
+                a[k] = r[j]
+                j+=1
+            end
+            k+=1
+        end
+        #Add any remaining elements in L and R
+        while i < l.length()
+            a[k] = l[i]
+            i+=1
+            k+=1
+        end
+        while j < r.length()
+            a[k] = r[j]
+            j+=1
+            k+=1
+        end
+    end
+end
+
+#Merge Sort Gate
+def mergeSort(a)
+    printPreSortList("Merge", a)
+    mergeSort2(a)
+    printPostSortList("Merge", a)
+end
+
+
+
+#Quick Sort ----------------------------------
+def quickSort2(a, start, endd)
+    if start < endd
+        p = partition(a, start, endd)
+        quickSort2(a, start, p-1)
+        quickSort2(a, p+1, endd)
+    end
+end
+
+
+def partition(a, start, endd)
+    pivot = a[endd]
+    i = start
+    for j in start..endd
+        if a[j] < pivot
+            temp = a[i]
+            a[i] = a[j]
+            a[j] = temp
+            i+=1
+        end
+    end
+    temp = a[i]
+    a[i] = a[endd]
+    a[endd] = temp
+    return i
+end
+
+
+  
+#Quick Sort Gate
+def quickSort(a)
+    printPreSortList("Quick", a)
+    quickSort2(a, 0, a.length()-1)
+    printPostSortList("Quick", a)
+end
+
+
+#Shell Sort ----------------------------------
+def shellSort(a)
+    printPreSortList("Shell", a)
+    
+    gap = a.length().div(2)
+
+    while gap > 0
+        for i in gap..a.length()-1
+            temp = a[i]
+            j=i
+            while j >= gap and a[j-gap] > temp
+                a[j] = a[j-gap]
+                j -= gap
+            end
+            a[j] = temp
+        end
+        gap = gap.div(2)
+    end
+    printPostSortList("Shell", a)
+end
+
+
+
+#Testing Sorting Algorithms ----------------------------------
+def getList()
+    bList = [8, 10, 15, 2, 3, 70, 100, 45, 0, 12, 0, 10, 1, 6, 21, 93]
+    sList = [5, 0, 4, 2, 1, 3]
+    tList = [2, 1]
+    zList = [5]
+    
+    return sList
+end
+
+
+insertionSort(getList())
+
+bubbleSort(getList())
+
+selectionSort(getList())
+
+mergeSort(getList())
+
+quickSort(getList())
+
+shellSort(getList())
+
+

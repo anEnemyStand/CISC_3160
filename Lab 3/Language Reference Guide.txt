@@ -1,0 +1,138 @@
+Clinton Caldwell
+Lab 3
+Language Reference Guide
+
+Python -------
+
+For loops:
+	for i = 0 to n
+		for i in range(0, n):
+
+	for i = 0 to n, i+=3
+		for i in range(0, n, 3):
+
+	for i = n to 0
+		for i in range(n, 0, -1):
+
+	for each element in array:
+		for i in array:
+
+While loops:
+	while i < n
+			while i < n:
+
+If statement
+	if i < n:
+
+Initialize Array with elements
+	array = [1, 2, 3, 4]
+
+Copy part of an array into new array
+	x = array[0:n]
+
+
+Display array elements
+	print(array)
+
+if( ), while( ) - not needed 
+";" - not needed
+{ } - not needed, indenting format used instead
+int, string, char, bool... - typenames not needed
+&& - and
+++, -- not used
+	+= 1, -= 1 used instead
+
+int functionName(int a, string b, float c) {...}
+		def functionName(a, b, c):
+
+int i = 5
+	i = 5
+
+string i = "Nice"
+	i = "Nice"
+
+arrays = lists
+
+cout << "My name is " << i << "! Nice to meet you!\n"
+	print("My name is ",i,"! Nice to meet you!\n")
+	
+a.length
+	len(a)
+
+x = floor (x/2)
+	x //= 2
+
+
+
+Ruby -------
+
+For loops:
+	(0 to n) includes n in Ruby
+
+	for i = 0 to n
+		for i in 0..n-1 do
+			...
+		end
+	for i = 0 to n, i+=3
+		for i in (0..n-1).step(3) do
+
+	for i = n to 0
+		for i in (n-1).downto(0)
+
+While loops:
+	while i < n
+		...
+		end
+
+	begin
+		...
+	end while i < n
+
+If statement
+	if i == n
+		...
+	else
+		...
+	end
+
+Initialize Array with elements
+	x = [1, 2, 3, 4]
+
+Copy part of an array into new array
+	x = array.slice(0,n)
+
+Display array elements
+	print "#{array}\n"
+	
+if( ), while( ) - not needed 
+";" - not needed
+{ } - not needed, indenting format used instead
+int, string, char, bool... - typenames not needed
+&& - and
+++, -- not used
+	+= 1, -= 1 used instead
+
+int functionName(int a, string b, float c)
+	def functionName(a, b, c)
+		...
+	end
+
+
+int i = 5
+	i = 5
+
+string i = "Nice"
+	i = "Nice"
+
+cout << "My name is " << i << "! Nice to meet you!\n"
+	print("My name is #{i}! Nice to meet you!\n")
+	puts("My name is #{i}! Nice to meet you!")
+	
+a.length
+	a.length()
+
+x = floor (x/2)
+	x= x.div(2)
+
+
+

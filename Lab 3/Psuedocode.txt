@@ -1,0 +1,102 @@
+Clinton Caldwell
+Lab 3
+Sorting Algorithms Psuedocode 
+
+
+Insertion_Sort(int a[])
+	for i = 1 to a.length
+		temp = a[i]
+		j = i
+		while j > 0 and a[j-1] >= temp
+			a[j] = a[j-1]
+			j--
+		a[j] = temp
+	
+	
+
+Bubble_Sort(int a[])
+	for j = a.length -1 to 1
+		for i = 0 to j
+			if a[i] > a[i+1]
+				temp = a[i]
+				a[i] = a[i+1]
+				a[i+1] = temp
+
+
+
+Selection_Sort(int a[])
+	for i = 0 to a.length
+		min = i
+		for j = i+1 to a.length
+			if a[j] < a[min]
+				min = j
+		swap a[i] and a[min]
+
+
+
+Merge_Sort(int a[])
+	if a.length > 1
+		// Copy data into temp left and right side arrays
+		m = floor(a.length / 2)
+		L = a[0 ... m-1]
+		R = a[m ... a.length-1]
+
+		Merge_Sort(L)
+		Merge_Sort(R)
+		
+		//Merge L and R into original  
+		i, j, k = 0
+		while i < L.length and j < R.length
+			if L[i] <= R[j]
+				a[k] = L[i]
+				i++
+			else
+				a[k] = R[j]
+				j++
+			k++
+
+		//Add any remaining elements in L and R
+		while i < L.length
+			a[k] = L[i]
+			i++
+			k++
+		while j < R.length
+			a[k] = R[j]
+			j++
+			k++
+
+	
+
+Quick_Sort(int a[], int start, int end)
+	if start < end
+		p = Partition(a, start, end)
+		Quick_Sort(a, start, p -1)
+		Quick_Sort(a, p+1, end)
+
+	// Partition Function
+		Partition(int a[], int start, int end)
+			pivot = a[end]
+			i = start
+			for j = start to end
+				if a[j] < pivot
+					swap a[i] and a[j]
+					i++
+			swap a[i] with a[end]
+			return i
+			
+
+
+Shell_Sort(int a[])
+	gap = floor(gap/2)
+    while gap > 0
+		for i = gap to a.length
+            temp = a[i]
+            j=i
+            while j >= gap and a[j-gap] > temp
+                a[j] = a[j-gap]
+                j -= gap
+            a[j] = temp
+        gap = floor(gap / 2)
+
+
+
